@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando DOM</title>
+</head>
+<body>
+    <h1>Praticando o uso do DOM.</h1>
+    <input type="number" name="tex1" id="tex1"> +
+    <input type="number" name="tex2" id="tex2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res"> Resultado</div>
+    <script>
+        function somar (){
+            var tn1 = window.document.getElementById('tex1')
+            var tn2 = window.document.querySelector('input#tex2')
+            var res = window.document.getElementById('res')
+
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+           res.innerHTML = `O resultado do é ${s}`
+        }
+    </script>
+    
+</body>
+</html>
