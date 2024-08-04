@@ -6,7 +6,7 @@ body{
 }
 header {
     color: white;
-    text-align: center;
+    
 
 }
 section{
@@ -18,7 +18,7 @@ section{
     box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.474);
 }
 div{
-    text-align: center;
+    
     padding: 8px;
 }
 footer{
