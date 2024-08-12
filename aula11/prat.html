@@ -9,30 +9,41 @@
             font: normal 20pt arial;
             background-color: antiquewhite;
         }
+        #imagemBrasil{
+            display: none;
+            width: 200px;
+            height: auto;
+            margin-top: 10px;
+        }
     </style>
-</head>
+
 <body>
     <h1>Descubra</h1>
-    Digite aqui de qual país você é <input type="text" name="pais" id="pais">
-    <input type="button" value="Verificar" ondblclick="calculo()">
+    Digite aqui de qual país você é: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="calculo()">
     <div id="res"></div>
+    <img id="imagemBrasil" src="imagem/brasil.jpg"  alt="imagem do Brasil">
 
     <script>
         function calculo(){
-            var pais = window.document.getElementById('pais')
-            var res = window.document.getElementById('res')
-            if (pais != 'Brasil'){
-                res.innerHTML += `Você é Estrangeiro!`
-            }
-            res.innerHTML += `Você é Brasilero!`
+            var pais = document.getElementById('pais').value.trim(); // Obtém o valor e remove espaços em branco extras
+            var res = document.getElementById('res');
+            var img = document.getElementById('imagemBrasil');
 
-            
-           
-           
-                }
-            
-        
+            // Limpa o conteúdo anterior
+            res.innerHTML = '';
+            img.style.display = 'none';
+
+            // Verifica o país e exibe a mensagem correspondente
+            if (pais.toLowerCase() === 'brasil') { // Compara em minúsculas para evitar problemas com capitalização
+                res.innerHTML = 'Você é Brasileiro!';
+                img.style.display ='block';
+
+            } else {
+                res.innerHTML = 'Você é Estrangeiro!';
+            }
+        }
     </script>
-    
 </body>
 </html>
+
